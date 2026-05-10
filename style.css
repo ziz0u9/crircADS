@@ -1,0 +1,515 @@
+:root {
+    --bg-dark: #0a0a0f;
+    --primary-blue: #2563FF;
+    --text-white: #FFFFFF;
+    --text-secondary: #8899AA;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Backgrounds */
+.dot-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 32px 32px;
+    z-index: -2;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.bg-glow {
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(37, 99, 255, 0.15) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Navbar */
+.navbar {
+    padding: 24px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo span {
+    color: var(--primary-blue);
+    letter-spacing: -1.5px;
+}
+
+.logo .sparkle {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-blue);
+    position: absolute;
+    top: -4px;
+    right: -16px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--text-white);
+}
+
+.nav-cta {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.nav-cta:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero */
+.hero {
+    padding: 200px 0 100px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin-bottom: 32px;
+}
+
+.pill-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.pill-tag {
+    position: absolute;
+    bottom: -10px;
+    right: -40px;
+    transform: rotate(-3deg);
+    background: var(--primary-blue);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 20px rgba(37, 99, 255, 0.4);
+    white-space: nowrap;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: var(--text-white);
+    color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+    transform: scale(1.02);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-white);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Made By Section */
+.text-center { text-align: center; }
+
+.made-by-section {
+    padding: 120px 0 60px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.floating-apps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.app-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: float-icon 4s ease-in-out infinite;
+}
+
+.app-icon:nth-child(1) { animation-delay: 0s; }
+.app-icon:nth-child(2) { animation-delay: 0.5s; width: 65px; height: 65px; }
+.app-icon:nth-child(3) { 
+    animation-delay: 1s; 
+    width: 75px; 
+    height: 75px; 
+    z-index: 2; 
+    transform: scale(1.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-icon:nth-child(4) { animation-delay: 1.5s; width: 65px; height: 65px; }
+.app-icon:nth-child(5) { animation-delay: 2s; }
+
+@keyframes float-icon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.made-by-title {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo-inline {
+    font-size: 4rem;
+    letter-spacing: -3px;
+    margin: 0;
+    position: relative;
+    display: inline-flex;
+}
+
+.logo-inline span {
+    letter-spacing: -3px;
+}
+
+.logo-inline .sparkle {
+    width: 40px;
+    height: 40px;
+    top: -10px;
+    right: -30px;
+}
+
+/* Showcase Intro / Expertise */
+.showcase-intro {
+    padding: 100px 0 100px;
+}
+
+.showcase-intro-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.showcase-left {
+    max-width: 550px;
+}
+
+.showcase-left h2 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+}
+
+.showcase-left p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.expertise-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.badge-tech {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-white);
+}
+
+.showcase-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.abstract-dots {
+    width: 300px;
+    height: 200px;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+    background-size: 16px 16px;
+    mask-image: radial-gradient(circle, black 30%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%);
+    opacity: 0.5;
+}
+
+/* Transition Section */
+.transition-section {
+    padding: 120px 0;
+}
+
+.transition-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+.transition-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+.transition-buttons {
+    display: flex;
+    gap: 16px;
+    padding-bottom: 10px;
+}
+
+/* Roadmap Section */
+.roadmap-section {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.roadmap-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    margin-bottom: 80px;
+}
+
+.text-blue {
+    color: var(--primary-blue);
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.roadmap-card {
+    background: #111116;
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 380px;
+    transition: transform 0.3s ease;
+}
+
+.roadmap-card:hover {
+    transform: translateY(-5px);
+}
+
+.roadmap-number {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-white);
+}
+
+.roadmap-content {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+}
+
+.roadmap-content h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    display: inline-block;
+}
+
+.underline {
+    position: relative;
+    display: inline-block;
+}
+
+.underline::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-white);
+}
+
+.roadmap-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 1.05rem;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* Footer */
+.clean-footer {
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 32px;
+}
+
+.footer-links a, .copyright {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--text-white);
+}
+
+@media (max-width: 992px) {
+    .transition-flex, .showcase-intro-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hero-title { font-size: 4rem; }
+    .made-by-title, .transition-title { font-size: 3rem; }
+    .logo-inline { font-size: 3rem; }
+    .roadmap-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-title { font-size: 2.8rem; }
+    .made-by-title { flex-direction: column; gap: 8px; font-size: 2.5rem; }
+    .logo-inline { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.1rem; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .btn { justify-content: center; }
+    .transition-buttons { flex-direction: column; width: 100%; }
+    .footer-flex { flex-direction: column; gap: 24px; text-align: center; }
+    .pill-tag { font-size: 0.7rem; }
+    .floating-apps { transform: scale(0.8); }
+}
