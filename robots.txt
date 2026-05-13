@@ -1,0 +1,10 @@
+# Robots.txt — CRIC ADS
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://cricads.fr/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
